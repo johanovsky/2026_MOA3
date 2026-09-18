@@ -1,3 +1,19 @@
+if("serviceWorker" in navigator) {
+    window.addEventListener("load", ()=> {
+        navigator.serviceWorker.register("sw.js")
+        .then(registration => {
+            console.log("SW registered");
+        })
+        .catch(error => {
+            console.log("SW registration failed: ", error);
+        });
+    });
+}
+
 function sayHello() {
-    document.getElementById("hello").innerText = "Hello world";
+    if(document.getElementById("hello").innerText == "Hello world!") {
+        document.getElementById("hello").innerText = "Ahoj svete!";
+    } else {
+        document.getElementById("hello").innerText = "Hello world!";
+    }
 }
