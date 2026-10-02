@@ -43,16 +43,23 @@ function reset() {
 
 function upravCounter(operation){
     
+    let pom = 1;
+    if(document.getElementById("double_check").checked) {
+        pom = 2;
+    }
+
     //podle operace vykoname akci
     switch(operation) {
         case "add":
             if(counter < MAX_COUNTER_VAL) {
-                counter++;
+                counter = counter + pom;
+                //counter += pom;
             }
             break;
         case "sub":
             if(counter > MIN_COUNTER_VAL) {
-                counter--;
+                //counter = counter - pom;
+                counter -= pom;
             }
             break;
         case "reset":
@@ -61,4 +68,10 @@ function upravCounter(operation){
     }
     //novou hodnotu counteru ulozime do spanu
     document.getElementById("counter_span").innerText = counter;
+}
+
+//pri kazdem obnoveni stranky
+window.onload = function() {
+    //sem se pise kod, ktery se ma spustit pri refreshi stranky
+    document.getElementById("counter_span").innerText = counter;      
 }
