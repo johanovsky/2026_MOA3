@@ -17,3 +17,56 @@ body>div {
 #marineImg {
     width: 300px;
 }
+
+/* prestylovani checkboxu na prepinac */
+/* styl pro label -> kontejner */
+.switch {
+    margin-top: 20px;
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* skryjeme checkbox */
+.switch input {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+/* styl pro pozadi prepinace */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: silver; /* barva pozadi ve vypnutem stavu */
+    border-radius: 34px;
+    transition: 0.4s;
+}
+
+/* posuvnik - vypnuty stav */
+.slider:before {
+    position: absolute;
+    content: "";
+    width: 26px;
+    height: 26px;
+    top: 4px;
+    left: 4px;
+    background-color: white;
+    border-radius: 50%;
+    transition: 0.4s;
+}
+
+/* barva pozadi pri zapnuto */
+input:checked + .slider  {
+    background-color: black;
+}
+
+/* posun posuvniku pri zapnuto */
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
