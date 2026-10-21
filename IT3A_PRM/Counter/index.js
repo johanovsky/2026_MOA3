@@ -4,7 +4,7 @@ if("serviceWorker" in navigator) {
          .then(registration => {
             console.log("SW registered");
          })
-         .error(error => {
+         .catch(error => {
             console.log("SW registration failed: ", error);
          });
     });
