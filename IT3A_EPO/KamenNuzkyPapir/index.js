@@ -25,4 +25,53 @@ function hra() {
     //vypis volby pc
     document.getElementById("cpu_label").innerText = volby[index];
 
+    //vyhodnoceni hry
+    let vysledek;
+    //nejdrive switch podle pocitace
+    switch(volby[index]) {
+        case "Kámen":
+            //nyni switch podle hrace
+            switch(hrac) {
+                case "Kámen":
+                    vysledek = "REMÍZA";
+                    break;
+                case "Nůžky":
+                    vysledek = "PROHRA";
+                    break;
+                case "Papír":
+                    vysledek = "VÝHRA";
+                    break;
+            }
+            break;
+        case "Nůžky":
+            //nyni switch podle hrace
+            switch(hrac) {
+                case "Kámen":
+                    vysledek = "VÝHRA";
+                    break;
+                case "Nůžky":
+                    vysledek = "REMÍZA";
+                    break;
+                case "Papír":
+                    vysledek = "PROHRA";
+                    break;
+            }
+            break;
+        case "Papír":
+            //nyni switch podle hrace
+            switch(hrac) {
+                case "Kámen":
+                    vysledek = "PROHRA";
+                    break;
+                case "Nůžky":
+                    vysledek = "VÝHRA";
+                    break;
+                case "Papír":
+                    vysledek = "REMÍZA";
+                    break;
+            }
+            break;
+    }
+    //vypis vysledku
+    document.getElementById("result_label").innerText = vysledek;
 }
